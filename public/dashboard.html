@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediTrack+ - AI Healthcare Assistant</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/dashboard.css" />
+  </head>
+  <body>
+    <!-- Background decoration -->
+    <div class="bg-decoration">
+      <div class="decoration-circle circle-1"></div>
+      <div class="decoration-circle circle-2"></div>
+      <div class="decoration-circle circle-3"></div>
+      <div class="decoration-pattern"></div>
+    </div>
+
+    <div class="container">
+      <!-- Main Chat Card -->
+      <div class="chat-card">
+        <!-- Header -->
+        <div class="chat-header">
+          <div class="header-left">
+            <div class="logo">
+              <svg
+                class="logo-icon"
+                viewBox="0 0 28 28"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2.5"
+              >
+                <path
+                  d="M11 2a2 2 0 0 0-2 2v5H4a2 2 0 0 0-2 2v6c0 1.1.9 2 2 2h5v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-5h5a2 2 0 0 0 2-2v-6a2 2 0 0 0-2-2h-5V4a2 2 0 0 0-2-2h-6z"
+                />
+              </svg>
+            </div>
+            <div class="brand-info">
+              <h1 class="brand-name">MediTrack+</h1>
+              <p class="brand-subtitle">AI Healthcare Assistant</p>
+            </div>
+          </div>
+          <div class="header-right">
+            <div class="profile-icon" id="profileIcon">
+              <svg
+                class="profile-svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+                <circle cx="12" cy="7" r="4" />
+              </svg>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Messages Area -->
+        <div class="chat-messages" id="chatMessages">
+          <div class="welcome-message">
+            <div class="bot-avatar">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M12 2L2 7l10 5 10-5-10-5z" />
+                <path d="M2 17l10 5 10-5" />
+                <path d="M2 12l10 5 10-5" />
+              </svg>
+            </div>
+            <div class="message-content">
+              <h3>Welcome to MediTrack+</h3>
+              <p>
+                I'm your AI healthcare assistant. I can help you track symptoms,
+                schedule appointments, manage medications, and answer
+                health-related questions. How can I assist you today?
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Input Area -->
+        <div class="chat-input-area">
+          <div class="input-container">
+            <input
+              type="text"
+              id="messageInput"
+              placeholder="Type your message here..."
+              autocomplete="off"
+            />
+            <button type="button" id="sendButton" class="send-button">
+              <svg
+                class="send-icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22,2 15,22 11,13 2,9 22,2" />
+              </svg>
+            </button>
+          </div>
+          <div class="quick-actions">
+            <button class="quick-action-btn" data-message="Add a reminder">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                <line x1="16" y1="2" x2="16" y2="6" />
+                <line x1="8" y1="2" x2="8" y2="6" />
+                <line x1="3" y1="10" x2="21" y2="10" />
+              </svg>
+              Reminder
+            </button>
+            <button class="quick-action-btn" data-message="Track my symptoms">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg>
+              Symptoms
+            </button>
+            <button class="quick-action-btn" data-message="Manage medications">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="4" y="4" width="16" height="16" rx="2" />
+                <rect x="9" y="9" width="6" height="6" />
+                <line x1="9" y1="1" x2="9" y2="4" />
+                <line x1="15" y1="1" x2="15" y2="4" />
+                <line x1="9" y1="20" x2="9" y2="23" />
+                <line x1="15" y1="20" x2="15" y2="23" />
+                <line x1="20" y1="9" x2="23" y2="9" />
+                <line x1="20" y1="14" x2="23" y2="14" />
+                <line x1="1" y1="9" x2="4" y2="9" />
+                <line x1="1" y1="14" x2="4" y2="14" />
+              </svg>
+              Medications
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Status Indicator -->
+      <div class="status-indicator">
+        <div class="status-dot"></div>
+        <span>Secure connection • Your data is protected</span>
+      </div>
+    </div>
+
+    <!-- Profile Menu -->
+    <div class="profile-menu" id="profileMenu">
+      <div class="profile-menu-header">
+        <div class="profile-avatar">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+        </div>
+        <div class="profile-info">
+          <h4>Healthcare User</h4>
+          <p>Premium Member</p>
+        </div>
+      </div>
+      <div class="profile-menu-items">
+        <button class="menu-item">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          My Profile
+        </button>
+        <button class="menu-item">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="12" r="3" />
+            <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1" />
+          </svg>
+          Settings
+        </button>
+        <button class="menu-item">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+            <polyline points="16,17 21,12 16,7" />
+            <line x1="21" y1="12" x2="9" y2="12" />
+          </svg>
+          Sign Out
+        </button>
+      </div>
+    </div>
+    <!-- Navigation Link to Profile -->
+    <div style="position: fixed; bottom: 2rem; right: 2rem; z-index: 1000">
+      <a
+        href="profile.html"
+        style="
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.75rem 1.25rem;
+          background: linear-gradient(135deg, #1976d2, #1565c0);
+          color: white;
+          text-decoration: none;
+          border-radius: 1.5rem;
+          font-size: 0.875rem;
+          font-weight: 500;
+          box-shadow: 0 4px 16px rgba(25, 118, 210, 0.3);
+          transition: all 0.3s ease;
+          font-family: 'Inter', sans-serif;
+        "
+        onmouseover="this.style.transform='translateY(-2px)'; this.style.boxShadow='0 6px 20px rgba(25, 118, 210, 0.4)'"
+        onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 16px rgba(25, 118, 210, 0.3)'"
+      >
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          style="width: 1rem; height: 1rem"
+        >
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+          <circle cx="12" cy="7" r="4" />
+        </svg>
+        Edit Profile
+      </a>
+    </div>
+
+    <!-- Include marked.js for Markdown parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/js/dashboard.js"></script>
+  </body>
+</html>
