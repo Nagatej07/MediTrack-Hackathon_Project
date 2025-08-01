@@ -40,8 +40,6 @@ const registerUser = async (req, res) => {
 
 
 // @desc    Login user
-const path = require('path');
-
 const loginUser = async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email }).select("+password");
@@ -50,14 +48,15 @@ const loginUser = async (req, res) => {
     const token = generateToken(user._id);
 
     res.cookie('token', token, {
-      httpOnly : true,
+      httpOnly: true,
       secure: false,
-      sameSite : 'Lax',
+      sameSite: 'Lax',
       maxAge: 3 * 24 * 60 * 60 * 1000,
-    })
-    res.sendFile(path.join(__dirname, '../../public', 'dashboard.html'));
+    });
+
+    return res.status(200).json({ message: 'Login successful' });
   } else {
-    res.status(401).send('Invalid credentials');
+    return res.status(401).json({ message: 'Invalid credentials' });
   }
 };
 

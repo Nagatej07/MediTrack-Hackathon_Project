@@ -62,33 +62,30 @@ document.getElementById("signup-form").addEventListener("submit", async (e) => {
 });
 
 // LOGIN
-document.getElementById("login-form").addEventListener("submit", async (e) => {
+document.querySelector('#loginForm').addEventListener('submit', async (e) => {
   e.preventDefault();
 
-  const email = document.getElementById("login-email").value;
-  const password = document.getElementById("login-password").value;
+const email = document.querySelector('#signin-email').value;
+const password = document.querySelector('#signin-password').value;
 
   try {
-    const response = await fetch("/api/users/login", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
+    const response = await fetch('/api/login', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
     });
 
     const data = await response.json();
 
-    if (!response.ok) {
-      alert(data.message || "Login failed");
-      return;
+    if (response.ok) {
+      showMessage(data.message || 'Login successful!', 'success');
+      setTimeout(() => window.location.href = '/dashboard.html', 1000);
+    } else {
+      showMessage(data.message || 'Invalid credentials.', 'error');
     }
-
-    alert("Login successful!");
-    // Optionally save token: localStorage.setItem('token', data.token);
-  } catch (error) {
-    console.error("Error during login:", error);
-    alert("Error occurred during login");
+  } catch (err) {
+    console.error(err);
+    showMessage('Something went wrong.', 'error');
   }
 });
 
