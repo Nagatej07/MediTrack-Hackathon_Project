@@ -12,7 +12,7 @@
 
 ## ✨ Features
 
-- 🔐 **User Authentication** with hashed passwords (bcrypt)
+- 🔐 **User Authentication** with hashed passwords (bcrypt) to ptotect the password
 - 🧾 **JWT-based token generation** for secure sessions
 - 🧑‍⚕️ Separate dashboards for **Admin** and **Patient**
 - 📁 Organized frontend served via Express (HTML, CSS, JS)
